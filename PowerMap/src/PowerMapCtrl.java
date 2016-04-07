@@ -1,4 +1,4 @@
-//test
+
 import isel.leic.pg.*;
 //import pt.isel.poo.powermap.model.PowerMapModel;
 import java.awt.event.KeyEvent;
