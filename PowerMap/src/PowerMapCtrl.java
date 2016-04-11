@@ -15,11 +15,8 @@ public class PowerMapCtrl {
     public static void main(String[] args) {
 
         PowerMapCtrl control = new PowerMapCtrl();
-        control.loadLevel("map1.txt");
         Console.fontSize(20);
         Console.scaleFactor(1,1);
-        //Console.exit(true);
-
 
         if ( control.loadLevel("map1.txt"))
             control.run();
