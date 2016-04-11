@@ -6,7 +6,8 @@ import java.io.*;
 public class PowerMapModel {
     private boolean DEBUG = true;
 
-    public static String[] bufferLine = new String[6];
+    public static String[] bufferLine = new String [6];
+    public static String board [][];
 
     public static int HEIGHT;
     public static int WIDTH;
@@ -50,13 +51,8 @@ public class PowerMapModel {
         return false;
     }
 
-    public void rotate(int lin, int col) {
 
-
-
-
-
-    }
+    public void rotate(int lin, int col) {    }
 
 
 
@@ -72,5 +68,7 @@ public class PowerMapModel {
             ++i;
         }
     }
+
+
 
 }

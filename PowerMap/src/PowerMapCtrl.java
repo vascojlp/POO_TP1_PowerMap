@@ -36,7 +36,8 @@ public class PowerMapCtrl {
 
         model.setChangeListener(view);      // Para atualizações de cada célula
         view.setViews(model);               // Inicia o view de cada célula
-        //view.repaintAll(model);             // Apresenta todas as células
+
+        view.repaintAll(model);             // Apresenta todas as células
 
 
         int key;
@@ -83,5 +84,6 @@ public class PowerMapCtrl {
             System.out.println(e);
             return false;
         }
+
     }
 }
