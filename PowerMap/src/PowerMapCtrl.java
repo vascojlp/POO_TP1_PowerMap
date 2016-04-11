@@ -30,12 +30,9 @@ public class PowerMapCtrl {
         Console.open("Power Map", model.getNumLines()*PowerMapView.CELL_HEIGHT, model.getNumColumns()*PowerMapView.CELL_WIDTH);
         Console.mouseClick(true);           // Liga a deteção de clicks
 
-
         model.setChangeListener(view);      // Para atualizações de cada célula
         view.setViews(model);               // Inicia o view de cada célula
-
         view.repaintAll(model);             // Apresenta todas as células
-
 
         int key;
         for(;;) {
