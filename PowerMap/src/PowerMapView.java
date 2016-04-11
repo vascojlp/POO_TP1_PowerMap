@@ -85,8 +85,6 @@ public class PowerMapView {
         for(int i = 1; i < PowerMapModel.bufferLine.length; ++i) {
             for (int j = 0; j < PowerMapModel.bufferLine[i].length(); ++j) {
                 s = PowerMapModel.bufferLine[i].charAt(j);
-                /*x = (i*PowerMapView.CELL_HEIGHT)-2;
-                y = (j*PowerMapView.CELL_WIDTH)+1;*/
                 y = (j*PowerMapView.CELL_HEIGHT)+1;
                 x = (i*PowerMapView.CELL_WIDTH)-2;
                 drawSymbol(s,x,y);
