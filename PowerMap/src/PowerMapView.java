@@ -15,6 +15,7 @@ public class PowerMapView {
 
     public void drawSynbol(char symbol, int x, int y){
         switch (symbol){
+
             case 'H':
                 Console.cursor(x,y);
                 Console.color(Console.WHITE,Console.RED);
@@ -75,7 +76,6 @@ public class PowerMapView {
                 break;
 
             default:break;
-
         }
 
     }
@@ -87,8 +87,8 @@ public class PowerMapView {
         for(int i = 1; i < PowerMapModel.bufferLine.length; ++i) {
             for (int j = 0; j < PowerMapModel.bufferLine[i].length(); ++j) {
                 s = PowerMapModel.bufferLine[i].charAt(j);
-                y = j+j+2;
-                x = i+i+i;
+                y = (j+1)*PowerMapView.CELL_HEIGHT-3;
+                x = (i*PowerMapView.CELL_WIDTH)-3;
                 drawSynbol(s,x,y);
             }
             //drawSynbol('H',11,11);drawSynbol('H',9,9);drawSynbol('H',7,7);drawSynbol('H',5,5);drawSynbol('H',3,3);drawSynbol('H',1,1);
