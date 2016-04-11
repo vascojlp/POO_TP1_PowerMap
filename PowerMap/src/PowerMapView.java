@@ -13,7 +13,7 @@ public class PowerMapView {
 
     public static int cordSynbols [][] ;
 
-    public void drawSynbol(char symbol, int x, int y){
+    public void drawSymbol(char symbol, int x, int y){
         switch (symbol){
 
             case 'H':
@@ -22,7 +22,7 @@ public class PowerMapView {
                 Console.println('H');
                 Console.cursor(x,y+1);
                 Console.color(Console.WHITE,Console.BLACK);
-                Console.println('-');
+                Console.println('-');   //drt
                 break;
 
             case 'P':
@@ -38,10 +38,10 @@ public class PowerMapView {
                 Console.cursor(x,y);
                 Console.color(Console.WHITE,Console.BLACK);
                 Console.println('o');
-                Console.cursor(x,y+1);
+                Console.cursor(x,y+1);  //Drt
                 Console.color(Console.WHITE,Console.BLACK);
                 Console.println('-');
-                Console.cursor(x,y-1);
+                Console.cursor(x,y-1);  //Esq
                 Console.color(Console.WHITE,Console.BLACK);
                 Console.println('-');
                 break;
@@ -83,28 +83,20 @@ public class PowerMapView {
 
     public void setViews(PowerMapModel model) {
 
-        //sacar coordenadas dos simbolos e guardalas noa array
         for(int i = 1; i < PowerMapModel.bufferLine.length; ++i) {
             for (int j = 0; j < PowerMapModel.bufferLine[i].length(); ++j) {
                 s = PowerMapModel.bufferLine[i].charAt(j);
+                /*x = (i*PowerMapView.CELL_HEIGHT)-2;
+                y = (j*PowerMapView.CELL_WIDTH)+1;*/
                 y = (j*PowerMapView.CELL_HEIGHT)+1;
                 x = (i*PowerMapView.CELL_WIDTH)-2;
-                drawSynbol(s,x,y);
+                drawSymbol(s,x,y);
             }
-            //drawSynbol('H',11,11);drawSynbol('H',9,9);drawSynbol('H',7,7);drawSynbol('H',5,5);drawSynbol('H',3,3);drawSynbol('H',1,1);
         }
 
     }
 
     public void repaintAll(PowerMapModel model) {
-
-        //TODO: Colocar a imprimir o array que vem de setViews() na consola
-        for(int i = 1; i < PowerMapModel.bufferLine.length; ++i){
-            for (int j = 0; j < PowerMapModel.bufferLine[i].length(); ++j){
-                Console.cursor(i-1, j+1);
-                Console.println(PowerMapModel.bufferLine[i].charAt(j));
-            }
-        }
 
     }
 }

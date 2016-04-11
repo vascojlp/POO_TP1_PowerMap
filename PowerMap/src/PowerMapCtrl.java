@@ -1,5 +1,7 @@
 
 import isel.leic.pg.*;
+
+import java.awt.event.KeyEvent;
 import java.io.FileReader;
 
 public class PowerMapCtrl {
@@ -15,7 +17,7 @@ public class PowerMapCtrl {
         PowerMapCtrl control = new PowerMapCtrl();
         control.loadLevel("map1.txt");
         Console.fontSize(20);
-        //Console.scaleFactor(1,1);
+        Console.scaleFactor(1,1);
         //Console.exit(true);
 
 
@@ -29,7 +31,6 @@ public class PowerMapCtrl {
     private void run() {
 
         Console.open("Power Map", model.getNumLines()*PowerMapView.CELL_HEIGHT, model.getNumColumns()*PowerMapView.CELL_WIDTH);
-        //Console.open("Power Map", model.getNumLines(), model.getNumColumns());
         Console.mouseClick(true);           // Liga a deteção de clicks
 
 
@@ -37,14 +38,14 @@ public class PowerMapCtrl {
         view.setViews(model);               // Inicia o view de cada célula
         //view.repaintAll(model);             // Apresenta todas as células
 
-        /*
+
         int key;
         for(;;) {
             key = Console.waitKeyPressed(0);    // Espera indefinidamente por uma tecla premida
             Console.waitKeyReleased(key);       // Espera que a tecla seja libertada
-            if (key==KeyEvent.VK_ESCAPE)        // Abandona o jogo
+            if (key == KeyEvent.VK_ESCAPE)        // Abandona o jogo
                 break;
-            if (key==Console.MOUSE_CLICKED) {
+            if (key == Console.MOUSE_CLICKED) {
                 rotateCell(Console.getMouseClick()); // Roda a célula no local do click
                 if( model.isCompleted() ) {          // Mapa completo ?
                     toast("TERMINATED");
@@ -54,7 +55,7 @@ public class PowerMapCtrl {
         }
         toast("BYE");
         Console.close();
-        */
+
     }
 
 

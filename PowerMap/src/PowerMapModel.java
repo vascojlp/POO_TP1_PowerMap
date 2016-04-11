@@ -50,7 +50,13 @@ public class PowerMapModel {
         return false;
     }
 
-    public void rotate(int lin, int col) {    }
+    public void rotate(int lin, int col) {
+
+
+
+
+
+    }
 
 
 
