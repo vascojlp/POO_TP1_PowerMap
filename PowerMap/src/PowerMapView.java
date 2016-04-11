@@ -11,7 +11,6 @@ public class PowerMapView {
     public int y;
     public char s;
 
-    public static int cordSynbols [][] ;
 
     public void drawSymbol(char symbol, int x, int y){
         switch (symbol){
