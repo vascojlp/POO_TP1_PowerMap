@@ -1,27 +1,43 @@
 
 import isel.leic.pg.*;
-//import pt.isel.poo.powermap.model.PowerMapModel;
-import java.awt.event.KeyEvent;
 import java.io.FileReader;
 
 public class PowerMapCtrl {
+
+    private boolean DEBUG = true;
+
     private PowerMapModel model = new PowerMapModel();
     private PowerMapView view = new PowerMapView();
 
+    /************************* MAIN *****************************/
     public static void main(String[] args) {
+
         PowerMapCtrl control = new PowerMapCtrl();
-        if ( control.loadLevel("map1.txt") )
+        control.loadLevel("map1.txt");
+        Console.fontSize(20);
+        //Console.scaleFactor(1,1);
+        //Console.exit(true);
+
+
+        if ( control.loadLevel("map1.txt"))
             control.run();
     }
+    /***********************************************************/
+
+
 
     private void run() {
-        Console.open("Power Map",
-                model.getNumLines()*PowerMapView.CELL_HEIGHT,
-                model.getNumColumns()*PowerMapView.CELL_WIDTH);
-        Console.mouseClick(true);           // Liga a dete��o de clicks
-        model.setChangeListener(view);      // Para atualiza��es de cada c�lula
-        view.setViews(model);               // Inicia o view de cada c�lula
-        view.repaintAll(model);             // Apresenta todas as c�lulas
+
+        Console.open("Power Map", model.getNumLines()*PowerMapView.CELL_HEIGHT, model.getNumColumns()*PowerMapView.CELL_WIDTH);
+        //Console.open("Power Map", model.getNumLines(), model.getNumColumns());
+        Console.mouseClick(true);           // Liga a deteção de clicks
+
+
+        model.setChangeListener(view);      // Para atualizações de cada célula
+        view.setViews(model);               // Inicia o view de cada célula
+        //view.repaintAll(model);             // Apresenta todas as células
+
+        /*
         int key;
         for(;;) {
             key = Console.waitKeyPressed(0);    // Espera indefinidamente por uma tecla premida
@@ -29,7 +45,7 @@ public class PowerMapCtrl {
             if (key==KeyEvent.VK_ESCAPE)        // Abandona o jogo
                 break;
             if (key==Console.MOUSE_CLICKED) {
-                rotateCell(Console.getMouseClick()); // Roda a c�lula no local do click
+                rotateCell(Console.getMouseClick()); // Roda a célula no local do click
                 if( model.isCompleted() ) {          // Mapa completo ?
                     toast("TERMINATED");
                     break;
@@ -38,7 +54,9 @@ public class PowerMapCtrl {
         }
         toast("BYE");
         Console.close();
+        */
     }
+
 
     private void rotateCell(Location click) {
         int lin = click.lin / PowerMapView.CELL_HEIGHT;
