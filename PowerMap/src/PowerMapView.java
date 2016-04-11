@@ -5,8 +5,8 @@ import isel.leic.pg.Console;
  */
 public class PowerMapView {
 
-    public static int CELL_HEIGHT = 4;
-    public static int CELL_WIDTH = 4;
+    public static int CELL_HEIGHT = 3;
+    public static int CELL_WIDTH = 3;
     public int x;
     public int y;
     public char s;
@@ -87,8 +87,8 @@ public class PowerMapView {
         for(int i = 1; i < PowerMapModel.bufferLine.length; ++i) {
             for (int j = 0; j < PowerMapModel.bufferLine[i].length(); ++j) {
                 s = PowerMapModel.bufferLine[i].charAt(j);
-                y = (j+1)*PowerMapView.CELL_HEIGHT-3;
-                x = (i*PowerMapView.CELL_WIDTH)-3;
+                y = (j*PowerMapView.CELL_HEIGHT)+1;
+                x = (i*PowerMapView.CELL_WIDTH)-2;
                 drawSynbol(s,x,y);
             }
             //drawSynbol('H',11,11);drawSynbol('H',9,9);drawSynbol('H',7,7);drawSynbol('H',5,5);drawSynbol('H',3,3);drawSynbol('H',1,1);
